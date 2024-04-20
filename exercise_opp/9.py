@@ -25,7 +25,7 @@ if __name__ ==  '__main__':
     student = Estudiante("John")
     print(student.school)
 
-    student.change_school("Harvard")
+    Estudiante.change_school("Harvard")
 
     student1 = Estudiante("Carlos")
     print(student1.school)

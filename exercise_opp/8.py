@@ -15,6 +15,7 @@ class Estudiante:
 
 
 if __name__ ==  '__main__':
+
     student = Estudiante("John")
     notes = {"Matemáticas": 6, "Historia": 3, "Ciencias": 7, "Literatura": 4}
-    student.filter_notes(notes)
+    Estudiante.filter_notes(notes)

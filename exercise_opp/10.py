@@ -35,7 +35,7 @@ class Estudiante:
 if __name__ ==  '__main__':
 
     student = Estudiante("John")
-    asistencias1 = {"Enero": 3, "Febrero": 6, "Marzo": 8}
+    asistencias1 = {"Enero": 6, "Febrero": 3, "Marzo": 8}
 
     attendance = student.get_students_attendances(asistencias1)
     print(attendance)

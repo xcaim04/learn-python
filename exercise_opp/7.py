@@ -1,17 +1,25 @@
 class Estudiante:
 
-    def __init__(self, name) -> None:
-        pass
 
-    def calculate_media(self, list_notes, grade):
+    def __init__(self, name, age, grade) -> None:
+        self.name = name
+        self.age = age
         self.grade = grade
-        self.media = sum(list_notes) / len(list_notes)
 
+    def get_name(self):
+        return self.name
 
-if __name__ ==  '__main__':
-    student = Estudiante("John")
+    def get_age(self):
+        return self.age
 
-    # Media arithmetic -> float
-    student.calculate_media([2, 1, 3], '12th')
+    def get_grade(self):
+        return f'Carlos\' note: {self.grade}'
 
-    print(student.grade, student.media)
+    def update_grade(self, rantings) -> None:
+        self.grade = sum(rantings) / len(rantings)
+
+if __name__ == '__main__':
+
+    student = Estudiante("Carlos", 18, 9)
+    student.update_grade([8.2, 9, 10, 9, 7.5, 8, 8.5])
+    print(student.get_grade())
