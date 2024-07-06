@@ -36,3 +36,11 @@ async def user(user_id: int):
 @app.get("/userquery/{user_id}")
 async def user(user_id: int):
     return search_user(user_id)
+
+
+@app.post("/addUser/")
+async def addUser(userToAdd: User):
+    if type(search_user(userToAdd.id)) == User:
+        return {'error': 'User already exists'}
+    else:
+        userlist.append(userToAdd)
