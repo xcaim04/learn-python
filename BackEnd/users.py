@@ -25,6 +25,10 @@ def search_user(ID: int) -> User:
         return {'error': 'Not found 404'}
 
 
+@app.get('/users')
+async def users():
+    return userlist
+
 
 # Query => url.../?user_id=1/
 @app.get("/user")
@@ -44,3 +48,16 @@ async def addUser(userToAdd: User):
         return {'error': 'User already exists'}
     else:
         userlist.append(userToAdd)
+
+@app.put("/updateUser/")
+async def updateUser(user: User):
+
+    found = False
+    for index, saved_user in enumerate(userlist):
+        if saved_user.id == user.id:
+            userlist[index] = user
+            found = True
+    if found:
+        return list(user)[0]
+    return {"error": "User not found"}
+    
